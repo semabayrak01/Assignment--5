@@ -1,0 +1,277 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue254;\red0\green0\blue0;\red144\green1\blue18;
+\red9\green60\blue148;\red19\green118\blue70;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;\cssrgb\c63922\c8235\c8235;
+\cssrgb\c1569\c31765\c64706;\cssrgb\c3529\c52549\c34510;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \{\cb1 \
+\cb2     \cf4 \strokec4 "$schema"\cf0 \strokec3 : \cf5 \strokec5 "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#"\cf0 \strokec3 ,\cb1 \
+\cb2     \cf4 \strokec4 "contentVersion"\cf0 \strokec3 : \cf5 \strokec5 "1.0.0.0"\cf0 \strokec3 ,\cb1 \
+\cb2     \cf4 \strokec4 "parameters"\cf0 \strokec3 : \{\cb1 \
+\cb2         \cf4 \strokec4 "name"\cf0 \strokec3 : \{\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "string"\cf0 \cb1 \strokec3 \
+\cb2         \},\cb1 \
+\cb2         \cf4 \strokec4 "location"\cf0 \strokec3 : \{\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "string"\cf0 \cb1 \strokec3 \
+\cb2         \},\cb1 \
+\cb2         \cf4 \strokec4 "sku"\cf0 \strokec3 : \{\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "string"\cf0 \cb1 \strokec3 \
+\cb2         \},\cb1 \
+\cb2         \cf4 \strokec4 "tier"\cf0 \strokec3 : \{\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "string"\cf0 \cb1 \strokec3 \
+\cb2         \}\cb1 \
+\cb2     \},\cb1 \
+\cb2     \cf4 \strokec4 "resources"\cf0 \strokec3 : [\cb1 \
+\cb2         \{\cb1 \
+\cb2             \cf4 \strokec4 "apiVersion"\cf0 \strokec3 : \cf5 \strokec5 "2021-05-01"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('name')]"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Network/loadBalancers"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "location"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('location')]"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "dependsOn"\cf0 \strokec3 : [\cb1 \
+\cb2                 \cf4 \strokec4 "Microsoft.Network/publicIPAddresses/az104-06-pip4"\cf0 \cb1 \strokec3 \
+\cb2             ],\cb1 \
+\cb2             \cf4 \strokec4 "tags"\cf0 \strokec3 : \{\},\cb1 \
+\cb2             \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                 \cf4 \strokec4 "frontendIPConfigurations"\cf0 \strokec3 : [\cb1 \
+\cb2                     \{\cb1 \
+\cb2                         \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-pip4"\cf0 \strokec3 ,\cb1 \
+\cb2                         \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                             \cf4 \strokec4 "publicIPAddress"\cf0 \strokec3 : \{\cb1 \
+\cb2                                 \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg4/providers/Microsoft.Network/publicIPAddresses/az104-06-pip4"\cf0 \cb1 \strokec3 \
+\cb2                             \}\cb1 \
+\cb2                         \}\cb1 \
+\cb2                     \}\cb1 \
+\cb2                 ],\cb1 \
+\cb2                 \cf4 \strokec4 "backendAddressPools"\cf0 \strokec3 : [\cb1 \
+\cb2                     \{\cb1 \
+\cb2                         \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-lb4-be1"\cf0 \cb1 \strokec3 \
+\cb2                     \}\cb1 \
+\cb2                 ],\cb1 \
+\cb2                 \cf4 \strokec4 "probes"\cf0 \strokec3 : [\cb1 \
+\cb2                     \{\cb1 \
+\cb2                         \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-lb4-hp1"\cf0 \strokec3 ,\cb1 \
+\cb2                         \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                             \cf4 \strokec4 "protocol"\cf0 \strokec3 : \cf5 \strokec5 "Tcp"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "port"\cf0 \strokec3 : \cf6 \strokec6 80\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "requestPath"\cf0 \strokec3 : \cf5 \strokec5 null\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "intervalInSeconds"\cf0 \strokec3 : \cf6 \strokec6 5\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "numberOfProbes"\cf0 \strokec3 : \cf6 \strokec6 1\cf0 \cb1 \strokec3 \
+\cb2                         \}\cb1 \
+\cb2                     \}\cb1 \
+\cb2                 ],\cb1 \
+\cb2                 \cf4 \strokec4 "loadBalancingRules"\cf0 \strokec3 : [\cb1 \
+\cb2                     \{\cb1 \
+\cb2                         \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-lb4-lbrule1"\cf0 \strokec3 ,\cb1 \
+\cb2                         \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                             \cf4 \strokec4 "frontendIPConfiguration"\cf0 \strokec3 : \{\cb1 \
+\cb2                                 \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg4/providers/Microsoft.Network/loadBalancers/az104-06-lb4/frontendIPConfigurations/az104-06-pip4"\cf0 \cb1 \strokec3 \
+\cb2                             \},\cb1 \
+\cb2                             \cf4 \strokec4 "frontendPort"\cf0 \strokec3 : \cf6 \strokec6 80\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "backendPort"\cf0 \strokec3 : \cf6 \strokec6 80\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "enableFloatingIP"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "idleTimeoutInMinutes"\cf0 \strokec3 : \cf6 \strokec6 4\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "protocol"\cf0 \strokec3 : \cf5 \strokec5 "TCP"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "loadDistribution"\cf0 \strokec3 : \cf5 \strokec5 "Default"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "probe"\cf0 \strokec3 : \{\cb1 \
+\cb2                                 \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg4/providers/Microsoft.Network/loadBalancers/az104-06-lb4/probes/az104-06-lb4-hp1"\cf0 \cb1 \strokec3 \
+\cb2                             \},\cb1 \
+\cb2                             \cf4 \strokec4 "disableOutboundSnat"\cf0 \strokec3 : \cf5 \strokec5 true\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "enableTcpReset"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "backendAddressPools"\cf0 \strokec3 : [\cb1 \
+\cb2                                 \{\cb1 \
+\cb2                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg4/providers/Microsoft.Network/loadBalancers/az104-06-lb4/backendAddressPools/az104-06-lb4-be1"\cf0 \cb1 \strokec3 \
+\cb2                                 \}\cb1 \
+\cb2                             ]\cb1 \
+\cb2                         \}\cb1 \
+\cb2                     \}\cb1 \
+\cb2                 ],\cb1 \
+\cb2                 \cf4 \strokec4 "inboundNatRules"\cf0 \strokec3 : [],\cb1 \
+\cb2                 \cf4 \strokec4 "outboundRules"\cf0 \strokec3 : []\cb1 \
+\cb2             \},\cb1 \
+\cb2             \cf4 \strokec4 "sku"\cf0 \strokec3 : \{\cb1 \
+\cb2                 \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('sku')]"\cf0 \strokec3 ,\cb1 \
+\cb2                 \cf4 \strokec4 "tier"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('tier')]"\cf0 \cb1 \strokec3 \
+\cb2             \}\cb1 \
+\cb2         \},\cb1 \
+\cb2         \{\cb1 \
+\cb2             \cf4 \strokec4 "apiVersion"\cf0 \strokec3 : \cf5 \strokec5 "2020-08-01"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Network/publicIpAddresses"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-pip4"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "location"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('location')]"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "dependsOn"\cf0 \strokec3 : [],\cb1 \
+\cb2             \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                 \cf4 \strokec4 "publicIPAddressVersion"\cf0 \strokec3 : \cf5 \strokec5 "IPv4"\cf0 \strokec3 ,\cb1 \
+\cb2                 \cf4 \strokec4 "publicIPAllocationMethod"\cf0 \strokec3 : \cf5 \strokec5 "Static"\cf0 \strokec3 ,\cb1 \
+\cb2                 \cf4 \strokec4 "idleTimeoutInMinutes"\cf0 \strokec3 : \cf6 \strokec6 4\cf0 \cb1 \strokec3 \
+\cb2             \},\cb1 \
+\cb2             \cf4 \strokec4 "sku"\cf0 \strokec3 : \{\cb1 \
+\cb2                 \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('sku')]"\cf0 \strokec3 ,\cb1 \
+\cb2                 \cf4 \strokec4 "tier"\cf0 \strokec3 : \cf5 \strokec5 "[parameters('tier')]"\cf0 \cb1 \strokec3 \
+\cb2             \}\cb1 \
+\cb2         \},\cb1 \
+\cb2         \{\cb1 \
+\cb2             \cf4 \strokec4 "apiVersion"\cf0 \strokec3 : \cf5 \strokec5 "2017-05-10"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Resources/deployments"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "NicUpdate-52ca92ee-f79b-48bb-8b31-ca39604ffb32-20221104111435"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "resourceGroup"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-rg1"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "dependsOn"\cf0 \strokec3 : [\cb1 \
+\cb2                 \cf4 \strokec4 "Microsoft.Network/loadBalancers/az104-06-lb4"\cf0 \cb1 \strokec3 \
+\cb2             ],\cb1 \
+\cb2             \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                 \cf4 \strokec4 "expressionEvaluationOptions"\cf0 \strokec3 : \{\cb1 \
+\cb2                     \cf4 \strokec4 "scope"\cf0 \strokec3 : \cf5 \strokec5 "inner"\cf0 \cb1 \strokec3 \
+\cb2                 \},\cb1 \
+\cb2                 \cf4 \strokec4 "mode"\cf0 \strokec3 : \cf5 \strokec5 "Incremental"\cf0 \strokec3 ,\cb1 \
+\cb2                 \cf4 \strokec4 "parameters"\cf0 \strokec3 : \{\},\cb1 \
+\cb2                 \cf4 \strokec4 "template"\cf0 \strokec3 : \{\cb1 \
+\cb2                     \cf4 \strokec4 "$schema"\cf0 \strokec3 : \cf5 \strokec5 "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#"\cf0 \strokec3 ,\cb1 \
+\cb2                     \cf4 \strokec4 "contentVersion"\cf0 \strokec3 : \cf5 \strokec5 "1.0.0.0"\cf0 \strokec3 ,\cb1 \
+\cb2                     \cf4 \strokec4 "parameters"\cf0 \strokec3 : \{\},\cb1 \
+\cb2                     \cf4 \strokec4 "variables"\cf0 \strokec3 : \{\},\cb1 \
+\cb2                     \cf4 \strokec4 "resources"\cf0 \strokec3 : [\cb1 \
+\cb2                         \{\cb1 \
+\cb2                             \cf4 \strokec4 "apiVersion"\cf0 \strokec3 : \cf5 \strokec5 "2021-08-01"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Network/networkInterfaces"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-nic0"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "location"\cf0 \strokec3 : \cf5 \strokec5 "eastus"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                                 \cf4 \strokec4 "provisioningState"\cf0 \strokec3 : \cf5 \strokec5 "Succeeded"\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "resourceGuid"\cf0 \strokec3 : \cf5 \strokec5 "9cae82b0-1c04-46b3-b97e-9ad247e9b913"\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "ipConfigurations"\cf0 \strokec3 : [\cb1 \
+\cb2                                     \{\cb1 \
+\cb2                                         \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "ipconfig1"\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Network/networkInterfaces/az104-06-nic0/ipConfigurations/ipconfig1"\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "etag"\cf0 \strokec3 : \cf5 \strokec5 "W/\\"7e141364-5437-49c5-bd22-2805709d5202\\""\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Network/networkInterfaces/ipConfigurations"\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                                             \cf4 \strokec4 "provisioningState"\cf0 \strokec3 : \cf5 \strokec5 "Succeeded"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "privateIPAddress"\cf0 \strokec3 : \cf5 \strokec5 "10.60.0.4"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "privateIPAllocationMethod"\cf0 \strokec3 : \cf5 \strokec5 "Dynamic"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "subnet"\cf0 \strokec3 : \{\cb1 \
+\cb2                                                 \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01/subnets/subnet0"\cf0 \cb1 \strokec3 \
+\cb2                                             \},\cb1 \
+\cb2                                             \cf4 \strokec4 "primary"\cf0 \strokec3 : \cf5 \strokec5 true\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "privateIPAddressVersion"\cf0 \strokec3 : \cf5 \strokec5 "IPv4"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "loadBalancerBackendAddressPools"\cf0 \strokec3 : [\cb1 \
+\cb2                                                 \{\cb1 \
+\cb2                                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourcegroups/az104-06-rg4/providers/Microsoft.Network/loadBalancers/az104-06-lb4/backendAddressPools/az104-06-lb4-be1"\cf0 \cb1 \strokec3 \
+\cb2                                                 \}\cb1 \
+\cb2                                             ],\cb1 \
+\cb2                                             \cf4 \strokec4 "loadBalancerInboundNatRules"\cf0 \strokec3 : []\cb1 \
+\cb2                                         \}\cb1 \
+\cb2                                     \}\cb1 \
+\cb2                                 ],\cb1 \
+\cb2                                 \cf4 \strokec4 "dnsSettings"\cf0 \strokec3 : \{\cb1 \
+\cb2                                     \cf4 \strokec4 "dnsServers"\cf0 \strokec3 : [],\cb1 \
+\cb2                                     \cf4 \strokec4 "appliedDnsServers"\cf0 \strokec3 : [],\cb1 \
+\cb2                                     \cf4 \strokec4 "internalDomainNameSuffix"\cf0 \strokec3 : \cf5 \strokec5 "kgucih0upvoe5as5e1uitt2wtd.bx.internal.cloudapp.net"\cf0 \cb1 \strokec3 \
+\cb2                                 \},\cb1 \
+\cb2                                 \cf4 \strokec4 "macAddress"\cf0 \strokec3 : \cf5 \strokec5 "00-0D-3A-18-1D-E9"\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "enableAcceleratedNetworking"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "vnetEncryptionSupported"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "enableIPForwarding"\cf0 \strokec3 : \cf5 \strokec5 true\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "networkSecurityGroup"\cf0 \strokec3 : \{\cb1 \
+\cb2                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Network/networkSecurityGroups/az104-06-nsg01"\cf0 \cb1 \strokec3 \
+\cb2                                 \},\cb1 \
+\cb2                                 \cf4 \strokec4 "primary"\cf0 \strokec3 : \cf5 \strokec5 true\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "virtualMachine"\cf0 \strokec3 : \{\cb1 \
+\cb2                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Compute/virtualMachines/az104-06-vm0"\cf0 \cb1 \strokec3 \
+\cb2                                 \},\cb1 \
+\cb2                                 \cf4 \strokec4 "hostedWorkloads"\cf0 \strokec3 : [],\cb1 \
+\cb2                                 \cf4 \strokec4 "tapConfigurations"\cf0 \strokec3 : [],\cb1 \
+\cb2                                 \cf4 \strokec4 "nicType"\cf0 \strokec3 : \cf5 \strokec5 "Standard"\cf0 \cb1 \strokec3 \
+\cb2                             \},\cb1 \
+\cb2                             \cf4 \strokec4 "tags"\cf0 \strokec3 : \{\}\cb1 \
+\cb2                         \}\cb1 \
+\cb2                     ],\cb1 \
+\cb2                     \cf4 \strokec4 "outputs"\cf0 \strokec3 : \{\}\cb1 \
+\cb2                 \}\cb1 \
+\cb2             \}\cb1 \
+\cb2         \},\cb1 \
+\cb2         \{\cb1 \
+\cb2             \cf4 \strokec4 "apiVersion"\cf0 \strokec3 : \cf5 \strokec5 "2017-05-10"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Resources/deployments"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "NicUpdate-4ab00e65-9634-445e-8986-bb1be8bf5dd1-20221104111435"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "resourceGroup"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-rg1"\cf0 \strokec3 ,\cb1 \
+\cb2             \cf4 \strokec4 "dependsOn"\cf0 \strokec3 : [\cb1 \
+\cb2                 \cf4 \strokec4 "Microsoft.Network/loadBalancers/az104-06-lb4"\cf0 \cb1 \strokec3 \
+\cb2             ],\cb1 \
+\cb2             \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                 \cf4 \strokec4 "expressionEvaluationOptions"\cf0 \strokec3 : \{\cb1 \
+\cb2                     \cf4 \strokec4 "scope"\cf0 \strokec3 : \cf5 \strokec5 "inner"\cf0 \cb1 \strokec3 \
+\cb2                 \},\cb1 \
+\cb2                 \cf4 \strokec4 "mode"\cf0 \strokec3 : \cf5 \strokec5 "Incremental"\cf0 \strokec3 ,\cb1 \
+\cb2                 \cf4 \strokec4 "parameters"\cf0 \strokec3 : \{\},\cb1 \
+\cb2                 \cf4 \strokec4 "template"\cf0 \strokec3 : \{\cb1 \
+\cb2                     \cf4 \strokec4 "$schema"\cf0 \strokec3 : \cf5 \strokec5 "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#"\cf0 \strokec3 ,\cb1 \
+\cb2                     \cf4 \strokec4 "contentVersion"\cf0 \strokec3 : \cf5 \strokec5 "1.0.0.0"\cf0 \strokec3 ,\cb1 \
+\cb2                     \cf4 \strokec4 "parameters"\cf0 \strokec3 : \{\},\cb1 \
+\cb2                     \cf4 \strokec4 "variables"\cf0 \strokec3 : \{\},\cb1 \
+\cb2                     \cf4 \strokec4 "resources"\cf0 \strokec3 : [\cb1 \
+\cb2                         \{\cb1 \
+\cb2                             \cf4 \strokec4 "apiVersion"\cf0 \strokec3 : \cf5 \strokec5 "2021-08-01"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Network/networkInterfaces"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "az104-06-nic1"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "location"\cf0 \strokec3 : \cf5 \strokec5 "eastus"\cf0 \strokec3 ,\cb1 \
+\cb2                             \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                                 \cf4 \strokec4 "provisioningState"\cf0 \strokec3 : \cf5 \strokec5 "Succeeded"\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "resourceGuid"\cf0 \strokec3 : \cf5 \strokec5 "56bdf98e-2e5a-4e26-ade7-b162a8410645"\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "ipConfigurations"\cf0 \strokec3 : [\cb1 \
+\cb2                                     \{\cb1 \
+\cb2                                         \cf4 \strokec4 "name"\cf0 \strokec3 : \cf5 \strokec5 "ipconfig1"\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Network/networkInterfaces/az104-06-nic1/ipConfigurations/ipconfig1"\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "etag"\cf0 \strokec3 : \cf5 \strokec5 "W/\\"10ccf9e9-0b0c-4230-ac94-5d66b5dd86ad\\""\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "type"\cf0 \strokec3 : \cf5 \strokec5 "Microsoft.Network/networkInterfaces/ipConfigurations"\cf0 \strokec3 ,\cb1 \
+\cb2                                         \cf4 \strokec4 "properties"\cf0 \strokec3 : \{\cb1 \
+\cb2                                             \cf4 \strokec4 "provisioningState"\cf0 \strokec3 : \cf5 \strokec5 "Succeeded"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "privateIPAddress"\cf0 \strokec3 : \cf5 \strokec5 "10.60.1.4"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "privateIPAllocationMethod"\cf0 \strokec3 : \cf5 \strokec5 "Dynamic"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "subnet"\cf0 \strokec3 : \{\cb1 \
+\cb2                                                 \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Network/virtualNetworks/az104-06-vnet01/subnets/subnet1"\cf0 \cb1 \strokec3 \
+\cb2                                             \},\cb1 \
+\cb2                                             \cf4 \strokec4 "primary"\cf0 \strokec3 : \cf5 \strokec5 true\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "privateIPAddressVersion"\cf0 \strokec3 : \cf5 \strokec5 "IPv4"\cf0 \strokec3 ,\cb1 \
+\cb2                                             \cf4 \strokec4 "loadBalancerBackendAddressPools"\cf0 \strokec3 : [\cb1 \
+\cb2                                                 \{\cb1 \
+\cb2                                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourcegroups/az104-06-rg4/providers/Microsoft.Network/loadBalancers/az104-06-lb4/backendAddressPools/az104-06-lb4-be1"\cf0 \cb1 \strokec3 \
+\cb2                                                 \}\cb1 \
+\cb2                                             ],\cb1 \
+\cb2                                             \cf4 \strokec4 "loadBalancerInboundNatRules"\cf0 \strokec3 : []\cb1 \
+\cb2                                         \}\cb1 \
+\cb2                                     \}\cb1 \
+\cb2                                 ],\cb1 \
+\cb2                                 \cf4 \strokec4 "dnsSettings"\cf0 \strokec3 : \{\cb1 \
+\cb2                                     \cf4 \strokec4 "dnsServers"\cf0 \strokec3 : [],\cb1 \
+\cb2                                     \cf4 \strokec4 "appliedDnsServers"\cf0 \strokec3 : [],\cb1 \
+\cb2                                     \cf4 \strokec4 "internalDomainNameSuffix"\cf0 \strokec3 : \cf5 \strokec5 "kgucih0upvoe5as5e1uitt2wtd.bx.internal.cloudapp.net"\cf0 \cb1 \strokec3 \
+\cb2                                 \},\cb1 \
+\cb2                                 \cf4 \strokec4 "macAddress"\cf0 \strokec3 : \cf5 \strokec5 "00-0D-3A-54-25-46"\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "enableAcceleratedNetworking"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "vnetEncryptionSupported"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "enableIPForwarding"\cf0 \strokec3 : \cf5 \strokec5 false\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "networkSecurityGroup"\cf0 \strokec3 : \{\cb1 \
+\cb2                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Network/networkSecurityGroups/az104-06-nsg01"\cf0 \cb1 \strokec3 \
+\cb2                                 \},\cb1 \
+\cb2                                 \cf4 \strokec4 "primary"\cf0 \strokec3 : \cf5 \strokec5 true\cf0 \strokec3 ,\cb1 \
+\cb2                                 \cf4 \strokec4 "virtualMachine"\cf0 \strokec3 : \{\cb1 \
+\cb2                                     \cf4 \strokec4 "id"\cf0 \strokec3 : \cf5 \strokec5 "/subscriptions/bdda7a16-a22a-4d52-9bb2-c078f8c371eb/resourceGroups/az104-06-rg1/providers/Microsoft.Compute/virtualMachines/az104-06-vm1"\cf0 \cb1 \strokec3 \
+\cb2                                 \},\cb1 \
+\cb2                                 \cf4 \strokec4 "hostedWorkloads"\cf0 \strokec3 : [],\cb1 \
+\cb2                                 \cf4 \strokec4 "tapConfigurations"\cf0 \strokec3 : [],\cb1 \
+\cb2                                 \cf4 \strokec4 "nicType"\cf0 \strokec3 : \cf5 \strokec5 "Standard"\cf0 \cb1 \strokec3 \
+\cb2                             \},\cb1 \
+\cb2                             \cf4 \strokec4 "tags"\cf0 \strokec3 : \{\}\cb1 \
+\cb2                         \}\cb1 \
+\cb2                     ],\cb1 \
+\cb2                     \cf4 \strokec4 "outputs"\cf0 \strokec3 : \{\}\cb1 \
+\cb2                 \}\cb1 \
+\cb2             \}\cb1 \
+\cb2         \}\cb1 \
+\cb2     ]\cb1 \
+\cb2 \}\cb1 \
+}
